@@ -1,4 +1,4 @@
-# Masala
+# Curry
 
 Next Gen Food + Weight tracker app
 

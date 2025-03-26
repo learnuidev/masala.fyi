@@ -17,6 +17,7 @@ export const languagesList = {
   ar: "Arabic",
   ru: "Russian",
   ja: "Japanese",
+  ne: "Nepali",
 
   // Add your supported locales here
 } as const;

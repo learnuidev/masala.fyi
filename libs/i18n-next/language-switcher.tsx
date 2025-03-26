@@ -14,6 +14,7 @@ import {
 import { useTranslation } from "./use-translation";
 import { getCookie, setCookie } from "./cookie-utils";
 import { i18nConfig, Language, languagesList } from "./i18n-config";
+import { captureSwitchLanguage } from "../posthog/event-trackers/switch-language";
 
 export function LanguageSwitcher() {
   const locale = getCookie(i18nConfig.cookieName) as Language;
@@ -23,6 +24,7 @@ export function LanguageSwitcher() {
   const router = useRouter();
   const { i18n } = useTranslation();
   const handleChange = async (value: Language) => {
+    captureSwitchLanguage(value);
     const newLocale = value;
     setSelectedItem(newLocale);
     // set cookie for next-i18n-router

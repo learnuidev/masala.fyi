@@ -1,4 +1,3 @@
-// app/providers.jsx
 "use client";
 
 import { appConfig } from "@/lib/app-config";

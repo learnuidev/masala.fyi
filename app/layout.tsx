@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { ToggleTheme } from "@/components/toggle-theme";
 import { I18NextHtmlProvider } from "@/libs/i18n-next/i18n-next-html-provider";
 import { LanguageSwitcher } from "@/libs/i18n-next/language-switcher";
+import { PostHogProvider } from "@/components/posthog-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,18 +32,20 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <div className="flex justify-between items-center p-4">
-            <ToggleTheme />
-            <LanguageSwitcher />
-          </div>
-          {children}
-        </ThemeProvider>
+        <PostHogProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <div className="flex justify-between items-center p-4">
+              <ToggleTheme />
+              <LanguageSwitcher />
+            </div>
+            {children}
+          </ThemeProvider>
+        </PostHogProvider>
       </body>
     </I18NextHtmlProvider>
   );

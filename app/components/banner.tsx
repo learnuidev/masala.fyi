@@ -13,7 +13,7 @@ export const Banner = () => {
         {t("banner:description")}
       </p>
 
-      <Link href="/app" className="mt-8 border-2 px-2 py-1">
+      <Link href="/dashboard" className="mt-8 border-2 px-2 py-1">
         {t("banner:get.started")}
       </Link>
     </section>

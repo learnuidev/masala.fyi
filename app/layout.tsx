@@ -9,6 +9,8 @@ import { PostHogProvider } from "@/components/posthog-provider";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { appConfig } from "@/lib/app-config";
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { AppSidebar } from "@/components/app-sidebar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -43,11 +45,20 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <div className="flex justify-between items-center p-4">
-              <ToggleTheme />
-              <LanguageSwitcher />
-            </div>
-            {children}
+            <SidebarProvider>
+              <AppSidebar />
+
+              <main className="w-full">
+                <nav className="flex justify-between items-center px-4 py-2 w-full">
+                  <SidebarTrigger />
+                  <div className="flex gap-2 items-center">
+                    <ToggleTheme />
+                    <LanguageSwitcher />
+                  </div>
+                </nav>
+                <div className="px-4">{children}</div>
+              </main>
+            </SidebarProvider>
           </ThemeProvider>
         </PostHogProvider>
       </body>

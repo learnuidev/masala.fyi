@@ -52,7 +52,9 @@ export function AppSidebar() {
   return (
     <Sidebar>
       <SidebarHeader>
-        <h1 className="font-bold text-xl lowercase">{t("banner:title")}</h1>
+        <h1 className="font-bold text-xl lowercase px-1">
+          {t("banner:title")}
+        </h1>
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup className="flex mt-4">

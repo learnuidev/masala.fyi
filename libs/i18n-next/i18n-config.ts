@@ -9,6 +9,7 @@ export const languagesList = {
   "zh-TW": "Chinese (Taiwan)",
   es: "Spanish",
   fr: "French",
+  de: "German",
   ko: "Korean",
   ro: "Romanian",
   ur: "Urdu",

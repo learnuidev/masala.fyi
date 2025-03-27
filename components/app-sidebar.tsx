@@ -14,6 +14,7 @@ import {
   ChartScatter,
   CookingPot,
   LayoutDashboard,
+  Settings,
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -73,7 +74,9 @@ export function AppSidebar() {
         </SidebarGroup>
       </SidebarContent>
       <SidebarFooter>
-        <Link href="/settings">{t("sidebar:settings")}</Link>
+        <NavLink icon={<Settings />} href="/settings">
+          {t("sidebar:settings")}
+        </NavLink>
       </SidebarFooter>
     </Sidebar>
   );

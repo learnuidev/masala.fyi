@@ -50,7 +50,7 @@ export default function RootLayout({
 
               <main className="w-full">
                 <nav className="flex justify-between items-center px-4 py-2 w-full">
-                  <SidebarTrigger />
+                  <SidebarTrigger className="px-0 mx-0" />
                   <div className="flex items-center">
                     <ToggleTheme />
                     <LanguageSwitcher />

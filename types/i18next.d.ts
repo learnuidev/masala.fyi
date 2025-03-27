@@ -4,6 +4,7 @@ import analytics from "@/locales/en/analytics.json";
 import banner from "@/locales/en/banner.json";
 import dashboard from "@/locales/en/dashboard.json";
 import recipes from "@/locales/en/recipes.json";
+import settings from "@/locales/en/settings.json";
 import sidebar from "@/locales/en/sidebar.json";
 import timeline from "@/locales/en/timeline.json";
 
@@ -15,6 +16,7 @@ declare module "i18next" {
       banner: typeof banner;
       dashboard: typeof dashboard;
       recipes: typeof recipes;
+      settings: typeof settings;
       sidebar: typeof sidebar;
       timeline: typeof timeline;
     };
